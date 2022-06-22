@@ -4,8 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.qa.wordpress.AccountPage;
 import com.qa.wordpress.Base.BaseTest;
+import com.qa.wordpress.pages.AccountPage;
 import com.qa.wordpress.utils.Constants;
 
 public class AccountPageTest extends BaseTest{	
