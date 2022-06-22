@@ -3,6 +3,7 @@ package com.qa.wordpress.factory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -67,11 +68,13 @@ public Properties init_prop(WebDriver driver) {
 //	FileInputStream ip = new FileInputStream("E:\\eclipse-workspace\\Jun2022_WordPressJourney\\src\\main\\resources\\config\\config.properties");
 
 	prop = new Properties();
-	
+		
 	try {
 		try {
-			FileInputStream ip = new FileInputStream("./src/main/resources/config/config.properties");
-		prop.load(ip);
+			FileInputStream fp = new FileInputStream("./src/main/resources/config/config.properties");
+         
+		prop.load(fp);
+	
 		} catch (FileNotFoundException e) {
 			
 			
@@ -79,8 +82,9 @@ public Properties init_prop(WebDriver driver) {
 		}
 	} catch (IOException e) {
 		e.printStackTrace();
-	}
 	
+	}
+
 return prop;
 }
 }

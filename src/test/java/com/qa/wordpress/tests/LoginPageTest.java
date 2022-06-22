@@ -3,6 +3,8 @@ package com.qa.wordpress.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.qa.wordpress.AccountPage;
+import com.qa.wordpress.ProfilePage;
 import com.qa.wordpress.Base.BaseTest;
 import com.qa.wordpress.utils.Constants;
 
@@ -37,13 +39,19 @@ public void createAccLinkExistsTest() {
 
 
 @Test(priority=5)
-public void LoginTest() throws Exception {
+public void loginTest() throws Exception  {
+	
+	String uname = prop.getProperty("username");
+	String passwd = prop.getProperty("password");
 
-String uname = prop.getProperty("username");
-String passwd = prop.getProperty("password");
+AccountPage accPage = lp.doLogin(uname, passwd);
 
-lp.doLogin(uname, passwd.trim());
+String accPageTitle = accPage.getAcctPageTitle();
+System.out.println(accPageTitle);
 
+
+Assert.assertEquals(accPageTitle, Constants.ACCOUNT_PAGE_TITLE);
+Assert.assertTrue(accPage.isProfileLinkExist());
 
 }
 

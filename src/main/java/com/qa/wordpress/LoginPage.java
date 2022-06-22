@@ -1,5 +1,7 @@
 package com.qa.wordpress;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,12 +16,11 @@ private By login = By.xpath("//ul/li/a[contains(text(),'Log In')]");
 private By username = By.name("usernameOrEmail");
 private By password = By.xpath("//div[@class='form-password-input']/input[@type='password']");
 private By contButton = By.xpath("//div/button[@type='submit']");
-private By loginButton = By.xpath("//div[@class='form-password-input']/input[@type='password']");
+private By logintButton = By.xpath("//div[@class='login__form-action']/button");
 private By forgotPwdLink = By.xpath("//div[@class='wp-login__links']/a[contains(text(),'Lost')]");
 private By createAccLink = By.xpath("//div[@class='wp-login__links']/a[contains(text(),'Lost')]");
-private By profileLink = By.xpath("//span[@class='masterbar__item-content']/img");
-private By logoutButton = By.xpath("//div[@class='sidebar__me-signout']/button");
-private By logoutMessage = By.xpath("//div[@class='inner']/h1");
+
+
 
 // 2. public page class constructor
 
@@ -60,30 +61,19 @@ public AccountPage doLogin(String uname, String pwd) throws Exception {
 	
 	waitForTime();
 	
-	driver.findElement(password).sendKeys("Login$123");
+	driver.findElement(password).sendKeys(pwd);
+    driver.findElement(logintButton).click();	
 	
+    waitForTime();
 	return new AccountPage(driver);
 		
 }
 
-public void doLogout() throws Exception {
 
-	driver.findElement(profileLink).click();
-	waitForTime();
-	driver.findElement(logoutButton).click();
-}
-
-public String getLogoutMessage() {
-	
-	String logoutMsg = driver.findElement(logoutMessage).getText();
-return logoutMsg;
-
-}
 
 public void waitForTime() throws Exception {
 	
 	Thread.sleep(2000);
-	
-	
+		
 }
 }

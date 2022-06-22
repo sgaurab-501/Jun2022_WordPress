@@ -13,7 +13,10 @@ public class AccountPage {
 
 	private By header = By.xpath("//header/h1");
 	private By actSectionHeader = By.xpath("//h3[contains(text(),'Give your')]");
-	private By searchLink = By.id("search-component-5e0d7b24-ffc1-4cde-8ac9-c4eee04bb4ed");
+	private By searchBar = By.id("search-component-5e0d7b24-ffc1-4cde-8ac9-c4eee04bb4ed");
+	private By topicLink = By.xpath("//div[@class='inline-help__results-cell']");
+	private By profileLink = By.xpath("//div[@class='masterbar__section masterbar__section--right']");
+	
 	
 	public AccountPage(WebDriver driver)	{
 	
@@ -33,16 +36,27 @@ public String getAcctPageHeader() {
 	
 	return driver.findElement(header).getText();
 }
-public List<String> getAcctSectionList() {
-	List<WebElement> acctSecList = driver.findElements(actSectionHeader);
-	List<String> acctSecValList = new ArrayList<String>();
-	for(WebElement e: acctSecList) {
+public List<String> getSearchTopicList() {
+	List<WebElement> topicList = driver.findElements(topicLink);
+	List<String> topicValList = new ArrayList<String>();
+	for(WebElement e: topicList) {
 		
 	String text = e.getText();	
 		
-	acctSecValList.add(text);	
+	topicValList.add(text);	
 	}
-	return acctSecValList;
+	return topicValList;
 }
 
+
+public boolean isSearchBarExist() {
+	
+	return driver.findElement(searchBar).isDisplayed();
 }
+
+public boolean isProfileLinkExist() {
+	
+return driver.findElement(profileLink).isDisplayed();	
+}
+}
+
