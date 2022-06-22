@@ -9,7 +9,7 @@ private By upgradeButton = By.xpath("//a[@class='button empty-content__action is
 	
 public void printPurchases() {
 	
-	System.out.println("Purchases are");
+	System.out.println("Purchases are:");
 
      
 
