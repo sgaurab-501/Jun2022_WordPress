@@ -1,4 +1,4 @@
-package com.qa.wordpress;
+package com.qa.wordpress.pages;
 
 public class PurchasePage {
 
