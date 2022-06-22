@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.qa.wordpress.AccountPage;
-import com.qa.wordpress.LoginPage;
 import com.qa.wordpress.factory.DriverFactory;
+import com.qa.wordpress.pages.AccountPage;
+import com.qa.wordpress.pages.LoginPage;
 
 public class BaseTest {
 

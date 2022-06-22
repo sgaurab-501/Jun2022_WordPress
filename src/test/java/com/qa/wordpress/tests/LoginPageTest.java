@@ -3,9 +3,9 @@ package com.qa.wordpress.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.qa.wordpress.AccountPage;
-import com.qa.wordpress.ProfilePage;
 import com.qa.wordpress.Base.BaseTest;
+import com.qa.wordpress.pages.AccountPage;
+import com.qa.wordpress.pages.ProfilePage;
 import com.qa.wordpress.utils.Constants;
 
 public class LoginPageTest extends BaseTest {

@@ -1,4 +1,4 @@
-package com.qa.wordpress;
+package com.qa.wordpress.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
