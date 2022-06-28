@@ -10,19 +10,21 @@ import com.qa.wordpress.utils.Constants;
 
 public class AccountPageTest extends BaseTest{	
 	
-	
 @BeforeClass	
-public void accSetup() {
-	
-	AccountPage accPage = new AccountPage(driver);
+public void accSetup() throws Exception {
+
+accPage = lp.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+
+
 
 }
 
 @Test
 public void accPageTitleTest() {
 
-	Assert.assertEquals(accPage.getAcctPageTitle(), Constants.ACCOUNT_PAGE_TITLE);
-	 
+	String accPageTitle = accPage.getAcctPageTitle();
+	Assert.assertEquals(accPageTitle, Constants.ACCOUNT_PAGE_TITLE);
+	 System.out.println(accPageTitle);
 }
 
 @Test
@@ -33,5 +35,14 @@ public void accPageHeaderTest() {
 Assert.assertEquals(accPageHeader, Constants.ACCOUNT_PAGE_HEADER);
 
 }
+
+@Test
+public void isProfileLinkExistsTest() {
+	
+	Assert.assertEquals(accPage.isProfileLinkExist(), true);
+	
+}
+
+
 
 }

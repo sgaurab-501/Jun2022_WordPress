@@ -9,17 +9,20 @@ import org.testng.annotations.BeforeTest;
 import com.qa.wordpress.factory.DriverFactory;
 import com.qa.wordpress.pages.AccountPage;
 import com.qa.wordpress.pages.LoginPage;
+import com.qa.wordpress.pages.ProfilePage;
 
 public class BaseTest {
 
 	DriverFactory df;
 	
  protected Properties prop;
-	protected WebDriver driver;
+public WebDriver driver;
 
 protected LoginPage lp;
 protected AccountPage accPage;
-	
+protected ProfilePage proPage;
+
+
 @BeforeTest
 public void setup() {
 	
@@ -31,6 +34,13 @@ public void setup() {
 }
 
 	
+	public WebDriver getDriver() {
+	return driver;
+}
+
+
+
+
 	@AfterTest
 	public void tearDown() throws Exception {
 Thread.sleep(1500);	

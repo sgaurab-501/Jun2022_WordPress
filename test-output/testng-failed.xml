@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.wordpress.tests.AccountPageTest">
+      <class name="com.qa.wordpress.tests.ProfilePageTest">
         <methods>
-          <include name="accPageHeaderTest"/>
-          <include name="accPageTitleTest"/>
-          <include name="accSetup"/>
+          <include name="isUserLoggedOUtTest"/>
+          <include name="profilesetup"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.qa.wordpress.tests.AccountPageTest -->
+      </class> <!-- com.qa.wordpress.tests.ProfilePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

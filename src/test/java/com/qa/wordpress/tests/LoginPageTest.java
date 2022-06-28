@@ -43,8 +43,8 @@ public void loginTest() throws Exception  {
 	
 	String uname = prop.getProperty("username");
 	String passwd = prop.getProperty("password");
+	AccountPage accPage = lp.doLogin(uname, passwd);
 
-AccountPage accPage = lp.doLogin(uname, passwd);
 
 String accPageTitle = accPage.getAcctPageTitle();
 System.out.println(accPageTitle);
